@@ -14,13 +14,9 @@ class PutApiTest extends Simulation {
     .exec(
       http("Put Api Update User")
         .put("/api/users/2")
-        .body(StringBody(
-          """{
-            |    "name": "morpheus",
-            |    "job": "zion resident"
-            |}""".stripMargin)).asJson
+        .body(RawFileBody("data/requestBodyData/updateUser.json")).asJson
     )
-  
+
   setUp(scn.inject(atOnceUsers(10)))
     .protocols(httpProtocol)
 }

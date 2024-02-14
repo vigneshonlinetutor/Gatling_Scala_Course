@@ -14,11 +14,7 @@ class PostApiTest extends Simulation {
     .exec(
       http("Post API to Create user")
         .post("/api/users")
-        .body(StringBody(
-          """{
-            |    "name": "morpheus",
-            |    "job": "leader"
-            |}""".stripMargin)).asJson
+        .body(RawFileBody("data/requestBodyData/createUser.json")).asJson
     )
 
   setUp(scn.inject(atOnceUsers(10)))
