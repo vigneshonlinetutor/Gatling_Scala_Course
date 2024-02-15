@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef.*
 import io.gatling.http.protocol.HttpProtocolBuilder
 
-class AssertResponseStatusCodeTest extends Simulation {
+class AssertResponseBodyTest extends Simulation {
 
   val httpProtocol: HttpProtocolBuilder = http.baseUrl("https://reqres.in")
 
@@ -15,6 +15,9 @@ class AssertResponseStatusCodeTest extends Simulation {
       http("GET API for fetching Single User")
         .get("/api/users/2")
         .check(status is 200)
+        .check(jsonPath("$.data.id").is("2"))
+        .check(jsonPath("$.data.email").is("janet.weaver@reqres.in"))
+        .check(jsonPath("$.data.last_name").is("Weaver"))
     )
 
   val postScenario: ScenarioBuilder = scenario("Create User Scenario")
@@ -22,7 +25,10 @@ class AssertResponseStatusCodeTest extends Simulation {
       http("Post API to Create user")
         .post("/api/users")
         .body(RawFileBody("data/requestBodyData/createUser.json")).asJson
-        .check(status.in(200 to 205))
+        .check(
+          status.in(200 to 205),
+          jsonPath("$.job").is("leader")
+        )
     )
 
   val putScenario: ScenarioBuilder = scenario("Update User scenario")
@@ -30,7 +36,10 @@ class AssertResponseStatusCodeTest extends Simulation {
       http("Put Api Update User")
         .put("/api/users/2")
         .body(RawFileBody("data/requestBodyData/updateUser.json")).asJson
-        .check(status.not(404))
+        .check(
+          status.not(404),
+          jsonPath("$.job").is("zion resident")
+        )
     )
 
   val deleteScenario: ScenarioBuilder = scenario("Delete User Scenario")

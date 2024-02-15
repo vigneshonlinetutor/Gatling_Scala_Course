@@ -6,7 +6,7 @@ import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef.*
 import io.gatling.http.protocol.HttpProtocolBuilder
 
-class AssertResponseStatusCodeTest extends Simulation {
+class AddPauseTest extends Simulation {
 
   val httpProtocol: HttpProtocolBuilder = http.baseUrl("https://reqres.in")
 
@@ -14,31 +14,34 @@ class AssertResponseStatusCodeTest extends Simulation {
     .exec(
       http("GET API for fetching Single User")
         .get("/api/users/2")
-        .check(status is 200)
     )
+    // FIXED PAUSE
+    .pause(3)
 
   val postScenario: ScenarioBuilder = scenario("Create User Scenario")
     .exec(
       http("Post API to Create user")
         .post("/api/users")
         .body(RawFileBody("data/requestBodyData/createUser.json")).asJson
-        .check(status.in(200 to 205))
     )
+    // RANDOM PAUSE
+    .pause(3, 5)
 
   val putScenario: ScenarioBuilder = scenario("Update User scenario")
+    .exec(session => session.set("pause", "3"))
     .exec(
       http("Put Api Update User")
         .put("/api/users/2")
         .body(RawFileBody("data/requestBodyData/updateUser.json")).asJson
-        .check(status.not(404))
     )
+    .pause("#{pause}")
 
   val deleteScenario: ScenarioBuilder = scenario("Delete User Scenario")
     .exec(
       http("Delete Api")
         .delete("/api/users/2")
-        .check(status is 204)
     )
+    .pause("#{pause}")
 
   setUp(
     getScenario.inject(atOnceUsers(10)),
