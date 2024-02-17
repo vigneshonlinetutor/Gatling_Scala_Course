@@ -56,6 +56,12 @@
                     <!--                    <excludes>-->
                     <!--                        <exclude>simulations.utils.*</exclude>-->
                     <!--                    </excludes>-->
+                    <apiToken>VS9OL7L2zkEqAgO0ucJ306BDUrzuF47BqMvy64uu1EMKDCIM.zxm7_PG9vyiUH32V</apiToken>
+                    <simulationId>004ecf82-ba53-4f0c-838f-1c4a5060bef8</simulationId>
+                    <packageId>12b0bc0f-fde0-483b-a865-be9f9faef6cc</packageId>
+                    <teamId>2c5fb5b6-8690-48ed-9100-52d49bec2d8d</teamId>
+                    <simulationClass>simulations.basics.AssertResponseBodyTest</simulationClass>
+                    <waitForRunEnd>true</waitForRunEnd>
                 </configuration>
             </plugin>
             <plugin>
