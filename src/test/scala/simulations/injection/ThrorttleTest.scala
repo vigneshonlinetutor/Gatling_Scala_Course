@@ -1,9 +1,9 @@
 package simulations.injection
 
-import io.gatling.core.Predef.*
+import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import io.gatling.core.structure.{ChainBuilder, ScenarioBuilder}
-import io.gatling.http.Predef.*
+import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
 class ThrorttleTest extends Simulation {

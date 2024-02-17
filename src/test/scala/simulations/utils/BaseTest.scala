@@ -1,8 +1,8 @@
 package simulations.utils
 
-import io.gatling.core.Predef.*
+import io.gatling.core.Predef._
 import io.gatling.core.structure.ChainBuilder
-import io.gatling.http.Predef.*
+import io.gatling.http.Predef._
 import io.gatling.http.request.builder.HttpRequestBuilder
 
 trait BaseTest {
