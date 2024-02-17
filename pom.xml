@@ -49,13 +49,13 @@
                 <artifactId>gatling-maven-plugin</artifactId>
                 <version>${gatling-maven-plugin.version}</version>
                 <configuration>
-                    <runMultipleSimulations>true</runMultipleSimulations>
-                    <includes>
-                        <include>simulations.*</include>
-                    </includes>
-                    <excludes>
-                        <exclude>simulations.utils.*</exclude>
-                    </excludes>
+                    <!--                    <runMultipleSimulations>true</runMultipleSimulations>-->
+                    <!--                    <includes>-->
+                    <!--                        <include>simulations.*</include>-->
+                    <!--                    </includes>-->
+                    <!--                    <excludes>-->
+                    <!--                        <exclude>simulations.utils.*</exclude>-->
+                    <!--                    </excludes>-->
                 </configuration>
             </plugin>
             <plugin>
