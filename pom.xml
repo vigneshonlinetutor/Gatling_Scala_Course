@@ -11,10 +11,10 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <encoding>UTF-8</encoding>
 
-        <gatling.version>3.10.3</gatling.version>
-        <gatling-maven-plugin.version>4.8.2</gatling-maven-plugin.version>
+        <gatling.version>3.11.2</gatling.version>
+        <gatling-maven-plugin.version>4.9.0</gatling-maven-plugin.version>
         <faker.version>1.0.2</faker.version>
-        <scala-maven-plugin.version>4.8.1</scala-maven-plugin.version>
+        <scala-maven-plugin.version>4.9.0</scala-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -59,7 +59,7 @@
                     <apiToken>VS9OL7L2zkEqAgO0ucJ306BDUrzuF47BqMvy64uu1EMKDCIM.zxm7_PG9vyiUH32V</apiToken>
                     <simulationId>004ecf82-ba53-4f0c-838f-1c4a5060bef8</simulationId>
                     <packageId>12b0bc0f-fde0-483b-a865-be9f9faef6cc</packageId>
-                    <teamId>2c5fb5b6-8690-48ed-9100-52d49bec2d8d</teamId>
+<!--                    <teamId>2c5fb5b6-8690-48ed-9100-52d49bec2d8d</teamId>-->
                     <simulationClass>simulations.basics.AssertResponseBodyTest</simulationClass>
                     <waitForRunEnd>true</waitForRunEnd>
                 </configuration>
