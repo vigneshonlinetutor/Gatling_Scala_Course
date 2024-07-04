@@ -1,4 +1,7 @@
-# GATLING - SCALA Udemy Course
+# DEPRECATED COURSE WITH OLDER GATLING VERSION
+# FOR LATEST ONE REFER TO THIS REPO - https://github.com/vigneshonlinetutor/Gatling_Maven_Scala
+
+## GATLING - SCALA Udemy Course
 
 This is the repository created as part of Gatling Udemy Course
 
